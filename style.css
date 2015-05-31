@@ -4,18 +4,19 @@ body {
 	color: #555;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
+	background: #efefef;
 }
 
 h1 {
 	color: #3f51b5;
 	font-size: 3em;
 	font-weight: 700;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.3em;
 }
 
 p {
 	width: 95%;
-	font-size: 1.2em;
+	font-size: 1em;
 	margin: 0 auto;
 }
 
@@ -23,7 +24,8 @@ textarea {
 	font-size: 1.4em;
 	padding: 15px;
 	width: 95%;
-	margin-top: 2em;
-	height: 70vh;
-	border-radius: 3px;
+	margin-top: 1em;
+	height: 73vh;
+	border-radius: 2px;
+	border: 2px solid #ccc;
 }
