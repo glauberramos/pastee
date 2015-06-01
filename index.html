@@ -8,7 +8,23 @@
 			<h1>Pastee</h1>
 			<p>Want to create a TODO list? Or save some info? Program a small script? 
 			<p>That's what this website is for, a quick and simple way to keep a text (specially for mac computers).</p>
-			<textarea name="paste" cols="30" rows="10"></textarea>
+			<textarea name="paste" id="paste" cols="30" rows="10"></textarea>
 		</section>
 	</body>
+
+	<script type="text/javascript">
+		var paste = document.getElementById("paste");
+
+		paste.value = localStorage.getItem('paste');
+		
+		if (paste.addEventListener) {
+		  paste.addEventListener('input', function() {
+			localStorage.setItem('paste', paste.value);
+		  }, false);
+		} else if (paste.attachEvent) {
+		  paste.attachEvent('onpropertychange', function() {
+			localStorage.setItem('paste', paste.value);
+		  });
+		}
+	</script>
 </html>
