@@ -1,17 +1,24 @@
+::selection {
+  background: rgb(66,220,219);
+}
+::-moz-selection {
+  background: rgb(66,220,219);
+}
+
 body {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	color: #555;
+	color: rgb(167, 186, 210);
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
-	background: #efefef;
+	background: #171d25;
 }
 
 h1 {
-	color: #3f51b5;
 	font-size: 3em;
 	font-weight: 700;
-	margin-bottom: 0.3em;
+	color: rgb(19, 71, 71);
+	margin: 0.5em 0;
 }
 
 p {
@@ -21,11 +28,46 @@ p {
 }
 
 textarea { 
+	background: #2C3A4D;
+	color: #c3d7ef;
 	font-size: 1.4em;
 	padding: 15px;
 	width: 95%;
 	margin-top: 1em;
-	height: 73vh;
+	height: 70vh;
 	border-radius: 2px;
-	border: 2px solid #ccc;
+	border: 1px solid #1E2022;
+	-moz-box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
+	outline: none;
 }
+
+
+h1 {
+  animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(66,220,219,1),
+                 0 0 10px rgba(66,220,219,1),
+                 0 0 11px  rgba(66,220,219,1),
+                 0 0 20px  rgba(66,220,219,.8),
+                 0 0 30px  rgba(66,220,219,.8),
+                 0 0 40px  rgba(66,220,219,.5),
+                 0 0 50px rgba(66,220,219,.5),
+                 0 0 70px rgba(66,220,219,.5),
+                 0 0 100px rgba(66,220,219,.5);
+  }
+  100% {
+    text-shadow: 0 0 1px rgba(66,220,219,1),
+                 0 0 4px rgba(66,220,219,1),
+                 0 0 5px rgba(66,220,219,1),
+                 0 0 10px rgba(66,220,219,.8),
+                 0 0 15px rgba(66,220,219,.8),
+                 0 0 30px rgba(66,220,219,.8),
+                 0 0 35px rgba(66,220,219,.5),
+                 0 0 40px rgba(66,220,219,.5);
+  }
+}
+
