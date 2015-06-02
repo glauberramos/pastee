@@ -15,10 +15,16 @@ body {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: 700;
 	color: rgb(19, 71, 71);
 	margin: 0.5em 0;
+	display: inline-block;
+}
+
+small {
+	font-size: 1.2em;
+	margin-left: 1em;
 }
 
 p {
@@ -33,8 +39,7 @@ textarea {
 	font-size: 1.4em;
 	padding: 15px;
 	width: 95%;
-	margin-top: 1em;
-	height: 70vh;
+	height: 85vh;
 	border-radius: 2px;
 	border: 1px solid #1E2022;
 	-moz-box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
