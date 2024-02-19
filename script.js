@@ -27,10 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     paste.addEventListener("click", function (event) {
-      var popup = document.getElementsByClassName("popup");
-      if (popup.length > 0) {
-        popup[0].parentNode.removeChild(popup[0]);
-      }
+      deletePopup();
 
       if (event.target.tagName === "A") {
         createPopup(event.target.innerText.trim(), event);
@@ -49,8 +46,12 @@ function createLink() {
   document.execCommand("createLink", false, selection);
 }
 
+function deleteLink() {
+  deletePopup();
+  document.execCommand("unlink", false, null);
+}
+
 function createPopup(linkText, event) {
-  console.log(event);
   var popup = document.createElement("div");
   popup.setAttribute("class", "popup");
   popup.style.top = event.clientY - 30 + "px";
@@ -64,4 +65,11 @@ function createPopup(linkText, event) {
   popup.appendChild(link);
 
   document.getElementById("container").appendChild(popup);
+}
+
+function deletePopup() {
+  var popup = document.getElementsByClassName("popup");
+  if (popup.length > 0) {
+    popup[0].parentNode.removeChild(popup[0]);
+  }
 }
