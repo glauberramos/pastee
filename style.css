@@ -27,6 +27,12 @@ small {
   top: -1px;
 }
 
+@media (max-width: 600px) {
+  small {
+    display: none;
+  }
+}
+
 p {
   font-size: 1em;
   margin: 0 auto;
