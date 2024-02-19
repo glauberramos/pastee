@@ -48,13 +48,12 @@ ul {
 }
 
 .textarea {
+  width: 100%;
   background: #171d25;
   color: #c3d7ef;
   font-size: 18px;
   line-height: 1.3em;
   padding: 20px;
-  width: 80%;
-  height: 87vh;
   border-radius: 2px;
   border: 1px solid #354253;
   resize: none;
@@ -62,6 +61,20 @@ ul {
   text-align: left;
   margin: 0 auto;
   overflow: scroll;
+}
+
+.container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 93vh;
+  display: flex;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    margin: 0 10px;
+  }
 }
 
 a,
@@ -79,16 +92,14 @@ svg {
   padding: 0;
   margin: 5px 0;
   position: absolute;
-  top: 15px;
-  left: 10%;
-  margin-left: -20px;
+  top: -32px;
+  left: 0;
 }
 
 #words {
   position: absolute;
-  top: 20px;
-  right: 10%;
-  margin-right: -20px;
+  top: -27px;
+  right: 0;
 }
 
 button {
