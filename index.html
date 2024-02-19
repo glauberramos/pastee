@@ -30,7 +30,10 @@
           <h1 class="logo">Pastee</h1>
           <ul class="commands">
             <li>
-              <button onclick="document.execCommand('bold', false, null)">
+              <button
+                onclick="document.execCommand('bold', false, null)"
+                title="bold"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -43,7 +46,10 @@
               </button>
             </li>
             <li>
-              <button onclick="document.execCommand('italic', false, null)">
+              <button
+                onclick="document.execCommand('italic', false, null)"
+                title="italic"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -56,7 +62,10 @@
               </button>
             </li>
             <li>
-              <button onclick="document.execCommand('underline', false, null)">
+              <button
+                onclick="document.execCommand('underline', false, null)"
+                title="underline"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -71,6 +80,7 @@
             <li>
               <button
                 onclick="document.execCommand('strikethrough', false, null)"
+                title="strikethrough"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +96,7 @@
             <li>
               <button
                 onclick="document.execCommand('insertUnorderedList', false, null)"
+                title="unordered list"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,6 +112,7 @@
             <li>
               <button
                 onclick="document.execCommand('insertOrderedList', false, null)"
+                title="ordered list"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +126,7 @@
               </button>
             </li>
             <li>
-              <button onclick="createLink()">
+              <button onclick="createLink()" title="create link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -127,7 +139,7 @@
               </button>
             </li>
             <li>
-              <button onclick="deleteLink()">
+              <button onclick="deleteLink()" title="remove link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
