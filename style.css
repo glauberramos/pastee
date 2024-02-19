@@ -27,16 +27,6 @@ small {
   top: -1px;
 }
 
-@media (max-width: 600px) {
-  small {
-    display: none;
-  }
-
-  .logo {
-    font-size: 22px;
-  }
-}
-
 p {
   font-size: 1em;
   margin: 0 auto;
@@ -137,4 +127,24 @@ button:hover svg {
 
 .popup a {
   color: black;
+}
+
+@media (max-width: 600px) {
+  small {
+    display: none;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .commands,
+  #words {
+    position: initial;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
 }
