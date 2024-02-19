@@ -31,6 +31,10 @@ small {
   small {
     display: none;
   }
+
+  .logo {
+    font-size: 22px;
+  }
 }
 
 p {
@@ -48,7 +52,6 @@ ol {
 }
 
 .textarea {
-  width: 100%;
   background: #171d25;
   color: #c3d7ef;
   font-size: 18px;
@@ -59,7 +62,6 @@ ol {
   resize: none;
   outline: none;
   text-align: left;
-  margin: 0 auto;
   overflow: scroll;
 }
 
@@ -67,14 +69,19 @@ ol {
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
-  height: 93vh;
+  height: 98vh;
   display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 1100px) {
   .container {
     margin: 0 10px;
   }
+}
+
+.header-content {
+  width: 100%;
 }
 
 a,
@@ -92,13 +99,13 @@ svg {
   padding: 0;
   margin: 5px 0;
   position: absolute;
-  top: -32px;
+  top: 16px;
   left: 0;
 }
 
 #words {
   position: absolute;
-  top: -27px;
+  top: 21px;
   right: 0;
   font-size: 14px;
 }

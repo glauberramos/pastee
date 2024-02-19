@@ -26,10 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
       countWords(paste.innerText);
     });
 
-    paste.addEventListener("contextmenu", function (event) {
-      event.preventDefault();
-    });
-
     paste.addEventListener("click", function (event) {
       deletePopup();
 
