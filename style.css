@@ -32,11 +32,13 @@ p {
   margin: 0 auto;
 }
 
-b,
-h1,
-h2,
-h3 {
+b {
   color: rgba(66, 220, 219, 1);
+}
+
+ul {
+  margin: 15px 0;
+  padding-left: 20px;
 }
 
 .textarea {
