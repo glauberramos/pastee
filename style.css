@@ -1,3 +1,7 @@
+:root {
+  --green: rgb(66, 220, 219);
+}
+
 body {
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,10 +17,9 @@ body {
 .logo {
   font-size: 26px;
   font-weight: 700;
-  color: rgb(19, 71, 71);
   margin: 10px 0;
   display: inline-block;
-  color: rgb(66, 220, 219);
+  color: var(--green);
   line-height: 1.1em;
   animation: flickering 0.07s infinite;
   text-shadow: 0 0 20px #ffffff4a, 0 0 20px #00ffab45;
@@ -35,7 +38,7 @@ p {
 }
 
 b {
-  color: rgba(66, 220, 219, 1);
+  color: var(--green);
 }
 
 ul,
@@ -50,7 +53,7 @@ ol {
   line-height: 1.3em;
   padding: 20px;
   border-radius: 2px;
-  border: 1px solid #354253;
+  border: 2px solid #354253;
   resize: none;
   outline: none;
   text-align: left;
@@ -96,9 +99,9 @@ svg {
   left: 0;
 }
 
-#words {
+.words {
   position: absolute;
-  top: 21px;
+  top: 24px;
   right: 0;
   font-size: 14px;
 }
@@ -109,7 +112,7 @@ button {
   padding: 2px;
   font-size: 16px;
   background: none;
-  color: white;
+  color: #c3d7ef;
   cursor: pointer;
 }
 
@@ -119,16 +122,16 @@ button:hover svg {
 
 .popup {
   position: absolute;
-  background: #c3d7ef;
-  padding: 10px;
+  background: #12161d;
+  color: #c3d7ef;
+  padding: 9px 12px;
   border-radius: 2px;
-  border: 1px solid;
-  color: black;
+  border: 1px solid #354253;
   font-size: 14px;
 }
 
 .popup a {
-  color: black;
+  color: var(--green);
 }
 
 @media (max-width: 600px) {
@@ -141,7 +144,7 @@ button:hover svg {
   }
 
   .commands,
-  #words {
+  .words {
     position: initial;
   }
 
