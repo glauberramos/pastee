@@ -16,7 +16,7 @@ body {
   color: rgb(19, 71, 71);
   margin: 10px 0;
   display: inline-block;
-  color: rgba(66, 220, 219, 1);
+  color: rgb(66, 220, 219);
   line-height: 1.1em;
 }
 
@@ -98,4 +98,9 @@ button {
   font-size: 16px;
   background: none;
   color: white;
+  cursor: pointer;
+}
+
+button:hover svg {
+  fill: rgb(66, 220, 219);
 }
