@@ -62,6 +62,7 @@
           </button>
         </li>
       </ul>
+      <div id="words">0 words</div>
       <div
         name="paste"
         class="textarea"
@@ -71,23 +72,4 @@
       ></div>
     </section>
   </body>
-
-  <script type="text/javascript">
-    var paste = document.getElementById("paste");
-    paste.innerHTML = localStorage.getItem("paste");
-
-    if (paste.addEventListener) {
-      paste.addEventListener(
-        "input",
-        function () {
-          localStorage.setItem("paste", paste.innerHTML);
-        },
-        false
-      );
-    } else if (paste.attachEvent) {
-      paste.attachEvent("onpropertychange", function () {
-        localStorage.setItem("paste", paste.innerHTML);
-      });
-    }
-  </script>
 </html>

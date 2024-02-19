@@ -80,6 +80,13 @@ svg {
   margin-left: -20px;
 }
 
+#words {
+  position: absolute;
+  top: 20px;
+  right: 10%;
+  margin-right: -20px;
+}
+
 button {
   display: block;
   border: none;
