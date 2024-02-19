@@ -1,11 +1,17 @@
 function countWords(str) {
-  const words = str.trim().split(/\s+/).length;
-  const chars = str
-    .match(/./gu)
-    .map((char) => char.trim())
+  const words = str
+    .trim()
+    .split(/\s+/)
     .filter((char) => char).length;
-  document.getElementById("words").innerText =
-    words + " words " + chars + " chars";
+
+  const allChars = str.match(/./gu);
+  const chars =
+    allChars &&
+    allChars.map((char) => char.trim()).filter((char) => char).length;
+
+  document.getElementById("words").innerText = `${words} word ${
+    chars ? chars : 0
+  } chars`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
