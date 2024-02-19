@@ -12,9 +12,24 @@
   </head>
   <body>
     <section>
-      <h1>Pastee</h1>
+      <h1 class="logo">Pastee</h1>
       <small> Simple way to keep a text</small>
       <ul class="commands">
+        <li>
+          <button onclick="document.execCommand('formatBlock', false, 'h1')">
+            H1
+          </button>
+        </li>
+        <li>
+          <button onclick="document.execCommand('formatBlock', false, 'h2')">
+            H2
+          </button>
+        </li>
+        <li>
+          <button onclick="document.execCommand('formatBlock', false, 'h3')">
+            H3
+          </button>
+        </li>
         <li>
           <button onclick="document.execCommand('bold', false, null)">B</button>
         </li>
@@ -31,6 +46,34 @@
         <li>
           <button onclick="document.execCommand('strikethrough', false, null)">
             –
+          </button>
+        </li>
+        <li>
+          <button
+            onclick="document.execCommand('insertUnorderedList', false, null)"
+          >
+            <svg
+              height="21"
+              viewBox="0 0 21 21"
+              width="21"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd" transform="translate(4 5)">
+                <g
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m11.5 5.5h-7" />
+                  <path d="m11.5 9.5h-7" />
+                  <path d="m11.5 1.5h-7" />
+                </g>
+                <path
+                  d="m1.49884033 2.5c.5 0 1-.5 1-1s-.5-1-1-1-.99884033.5-.99884033 1 .49884033 1 .99884033 1zm0 4c.5 0 1-.5 1-1s-.5-1-1-1-.99884033.5-.99884033 1 .49884033 1 .99884033 1zm0 4c.5 0 1-.5 1-1s-.5-1-1-1-.99884033.5-.99884033 1 .49884033 1 .99884033 1z"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
           </button>
         </li>
       </ul>
