@@ -1,30 +1,45 @@
 <html>
-	<head>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    	<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<section>
-			<h1>Pastee</h1><small> A quick and simple way to write and keep a text online</small>
-			<textarea name="paste" id="paste" cols="30" rows="10" autofocus></textarea>
-		</section>
-	</body>
+  <head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Pastee</h1>
+      <small> A quick and simple way to write and keep a text online</small>
+      <textarea
+        name="paste"
+        id="paste"
+        cols="30"
+        rows="10"
+        autofocus
+      ></textarea>
+    </section>
+  </body>
 
-	<script type="text/javascript">
-		var paste = document.getElementById("paste");
+  <script type="text/javascript">
+    var paste = document.getElementById("paste");
 
-		paste.value = localStorage.getItem('paste');
-		
-		if (paste.addEventListener) {
-		  paste.addEventListener('input', function() {
-			localStorage.setItem('paste', paste.value);
-		  }, false);
-		} else if (paste.attachEvent) {
-		  paste.attachEvent('onpropertychange', function() {
-			localStorage.setItem('paste', paste.value);
-		  });
-		}
-	</script>
+    paste.value = localStorage.getItem("paste");
+
+    if (paste.addEventListener) {
+      paste.addEventListener(
+        "input",
+        function () {
+          localStorage.setItem("paste", paste.value);
+        },
+        false
+      );
+    } else if (paste.attachEvent) {
+      paste.attachEvent("onpropertychange", function () {
+        localStorage.setItem("paste", paste.value);
+      });
+    }
+  </script>
 </html>
