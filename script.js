@@ -54,7 +54,7 @@ function deleteLink() {
 function createPopup(linkText, event) {
   var popup = document.createElement("div");
   popup.setAttribute("class", "popup");
-  popup.style.top = event.clientY - 30 + "px";
+  popup.style.top = event.clientY + 15 + "px";
   popup.style.left = event.offsetX + "px";
   var link = document.createElement("a");
   link.setAttribute("target", "_blank");
