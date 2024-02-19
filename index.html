@@ -14,32 +14,51 @@
     <section>
       <h1>Pastee</h1>
       <small> Simple way to keep a text</small>
-      <textarea
+      <ul class="commands">
+        <li>
+          <button onclick="document.execCommand('bold', false, null)">B</button>
+        </li>
+        <li>
+          <button onclick="document.execCommand('italic', false, null)">
+            i
+          </button>
+        </li>
+        <li>
+          <button onclick="document.execCommand('underline', false, null)">
+            _
+          </button>
+        </li>
+        <li>
+          <button onclick="document.execCommand('strikethrough', false, null)">
+            –
+          </button>
+        </li>
+      </ul>
+      <div
         name="paste"
+        class="textarea"
         id="paste"
-        cols="30"
-        rows="10"
+        contenteditable="true"
         autofocus
-      ></textarea>
+      ></div>
     </section>
   </body>
 
   <script type="text/javascript">
     var paste = document.getElementById("paste");
-
-    paste.value = localStorage.getItem("paste");
+    paste.innerHTML = localStorage.getItem("paste");
 
     if (paste.addEventListener) {
       paste.addEventListener(
         "input",
         function () {
-          localStorage.setItem("paste", paste.value);
+          localStorage.setItem("paste", paste.innerHTML);
         },
         false
       );
     } else if (paste.attachEvent) {
       paste.attachEvent("onpropertychange", function () {
-        localStorage.setItem("paste", paste.value);
+        localStorage.setItem("paste", paste.innerHTML);
       });
     }
   </script>
