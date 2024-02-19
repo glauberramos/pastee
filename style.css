@@ -63,6 +63,7 @@ ol {
   outline: none;
   text-align: left;
   overflow: scroll;
+  height: 100vh;
 }
 
 .container {
