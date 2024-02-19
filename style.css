@@ -4,7 +4,7 @@ body {
   color: rgb(167, 186, 210);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  background: #171d25;
+  background: #12161d;
   margin: 0;
 }
 
@@ -30,16 +30,22 @@ p {
   margin: 0 auto;
 }
 
+b,
+h1,
+h2,
+h3 {
+  color: rgba(66, 220, 219, 1);
+}
+
 .textarea {
-  background: #2c3a4d;
+  background: #171d25;
   color: #c3d7ef;
   font-size: 18px;
   padding: 20px;
   width: 95%;
   height: 87vh;
   border-radius: 2px;
-  border: 1px solid #1e2022;
-  box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
+  border: 1px solid #354253;
   resize: none;
   outline: none;
   text-align: left;
