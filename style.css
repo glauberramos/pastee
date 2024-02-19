@@ -13,23 +13,27 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   background: #171d25;
+  margin: 0;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 26px;
   font-weight: 700;
   color: rgb(19, 71, 71);
-  margin: 0.5em 0;
+  margin: 10px 0;
   display: inline-block;
+  color: rgba(66, 220, 219, 1);
+  line-height: 1.1em;
 }
 
 small {
-  font-size: 1.2em;
-  margin-left: 1em;
+  font-size: 17px;
+  margin-left: 12px;
+  position: relative;
+  top: -1px;
 }
 
 p {
-  width: 95%;
   font-size: 1em;
   margin: 0 auto;
 }
@@ -37,34 +41,13 @@ p {
 textarea {
   background: #2c3a4d;
   color: #c3d7ef;
-  font-size: 1.4em;
+  font-size: 20px;
   padding: 15px;
-  width: 95%;
-  height: 85vh;
+  width: 97%;
+  height: 92vh;
   border-radius: 2px;
   border: 1px solid #1e2022;
-  -moz-box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
-  -webkit-box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
+  resize: none;
   outline: none;
-}
-
-h1 {
-  animation: neonGlow 2s infinite alternate
-    cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-@keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 5px rgba(66, 220, 219, 1), 0 0 10px rgba(66, 220, 219, 1),
-      0 0 11px rgba(66, 220, 219, 1), 0 0 20px rgba(66, 220, 219, 0.8),
-      0 0 30px rgba(66, 220, 219, 0.8), 0 0 40px rgba(66, 220, 219, 0.5),
-      0 0 50px rgba(66, 220, 219, 0.5), 0 0 70px rgba(66, 220, 219, 0.5),
-      0 0 100px rgba(66, 220, 219, 0.5);
-  }
-  100% {
-    text-shadow: 0 0 1px rgba(66, 220, 219, 1), 0 0 4px rgba(66, 220, 219, 1),
-      0 0 5px rgba(66, 220, 219, 1), 0 0 10px rgba(66, 220, 219, 0.8),
-      0 0 15px rgba(66, 220, 219, 0.8), 0 0 30px rgba(66, 220, 219, 0.8),
-      0 0 35px rgba(66, 220, 219, 0.5), 0 0 40px rgba(66, 220, 219, 0.5);
-  }
 }
