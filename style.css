@@ -42,9 +42,9 @@ b {
   color: rgba(66, 220, 219, 1);
 }
 
-ul {
+ul,
+ol {
   margin: 15px 0;
-  padding-left: 20px;
 }
 
 .textarea {
@@ -83,7 +83,7 @@ svg {
 }
 
 svg {
-  width: 18px;
+  width: 17px;
 }
 
 .commands {
