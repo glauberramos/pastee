@@ -9,7 +9,7 @@ function countWords(str) {
     allChars &&
     allChars.map((char) => char.trim()).filter((char) => char).length;
 
-  document.getElementById("words").innerText = `${words} word ${
+  document.getElementById("words").innerText = `${words} words ${
     chars ? chars : 0
   } chars`;
 }
