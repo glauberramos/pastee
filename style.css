@@ -36,7 +36,7 @@ p {
   font-size: 18px;
   padding: 20px;
   width: 95%;
-  height: 90vh;
+  height: 87vh;
   border-radius: 2px;
   border: 1px solid #1e2022;
   box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.1) inset;
@@ -44,6 +44,7 @@ p {
   outline: none;
   text-align: left;
   margin: 0 auto;
+  overflow: scroll;
 }
 
 a,
