@@ -100,7 +100,7 @@ svg {
 
 .words {
   position: absolute;
-  top: 24px;
+  top: 25px;
   right: 0;
   font-size: 14px;
 }
@@ -151,5 +151,9 @@ button:hover svg {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  iframe {
+    display: none;
   }
 }
