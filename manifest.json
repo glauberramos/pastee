@@ -1,0 +1,37 @@
+{
+  "theme_color": "#42dcdb",
+  "background_color": "#42dcdb",
+  "orientation": "any",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/index.html",
+  "name": "PasteePad",
+  "short_name": "PasteePad",
+  "description": "Online Text Editor to paste and keep text, great for notes, todos and links.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
