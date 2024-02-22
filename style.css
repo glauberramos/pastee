@@ -159,7 +159,7 @@ button:hover svg {
 }
 
 @media all and (display-mode: standalone) {
-  h1,
+  .logo,
   small {
     display: none;
   }
