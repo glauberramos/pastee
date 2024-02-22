@@ -158,7 +158,7 @@ button:hover svg {
   }
 }
 
-@media all and (display-mode: minimal-ui) {
+@media all and (display-mode: standalone) {
   h1,
   small {
     display: none;
