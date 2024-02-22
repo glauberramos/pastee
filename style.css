@@ -157,3 +157,17 @@ button:hover svg {
     display: none;
   }
 }
+
+@media all and (display-mode: minimal-ui) {
+  h1,
+  small {
+    display: none;
+  }
+
+  .textarea {
+    margin-top: 48px;
+    border: none;
+    background: none;
+    padding: 20px 0;
+  }
+}
