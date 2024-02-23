@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+window.onfocus = function () {
+  var paste = document.getElementById("paste");
+  paste.innerHTML = localStorage.getItem("paste");
+};
+
 function createLink() {
   const selection = window.getSelection().toString().trim();
   document.execCommand("createLink", false, selection);
