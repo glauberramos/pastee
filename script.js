@@ -78,3 +78,7 @@ function deletePopup() {
     popup[0].parentNode.removeChild(popup[0]);
   }
 }
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js", { scope: "/" });
+}
