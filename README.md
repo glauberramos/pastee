@@ -12,4 +12,6 @@
 - add to home screen
 - dark mode first
 - zero dependencies on libraries
+- count words and chars
 - content editable
+- today moon phase and illumination
