@@ -1,6 +1,6 @@
 ![pasteePad](https://github.com/glauberramos/pastee/blob/master/icon-192x192.png?raw=true?raw=true)
 
-<p align="center"><a href="https://pasteepad.com">pasteepad.com</a></p>
+<p align="left"><a href="https://pasteepad.com">pasteepad.com</a></p>
 
 ### Features
 
