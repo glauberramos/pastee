@@ -46,13 +46,11 @@ ol {
 }
 
 .textarea {
-  background: #171d25;
   color: #c3d7ef;
   font-size: 18px;
   line-height: 1.3em;
-  padding: 20px;
+  padding: 15px 0;
   border-radius: 2px;
-  border: 2px solid #354253;
   resize: none;
   outline: none;
   text-align: left;
@@ -95,7 +93,7 @@ svg {
   margin: 5px 0;
   position: absolute;
   top: 16px;
-  left: 0;
+  left: -5px;
 }
 
 .words {
@@ -166,8 +164,5 @@ button:hover svg {
 
   .textarea {
     margin-top: 48px;
-    border: none;
-    background: none;
-    padding: 20px 0;
   }
 }
