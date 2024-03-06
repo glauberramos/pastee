@@ -33,6 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
         createPopup(event.target.innerText.trim(), event);
       }
     });
+
+    paste.addEventListener("change", function (event) {
+      if (!event.target.hasAttribute("checked")) {
+        event.target.setAttribute("checked", "checked");
+      } else {
+        event.target.removeAttribute("checked");
+      }
+
+      localStorage.setItem("paste", paste.innerHTML);
+    });
   } else if (paste.attachEvent) {
     paste.attachEvent("onpropertychange", function () {
       localStorage.setItem("paste", paste.innerHTML);
@@ -81,4 +91,21 @@ function deletePopup() {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js", { scope: "/" });
+}
+
+function insertCheckbox() {
+  const selection = window.getSelection().toString().trim();
+
+  if (selection) {
+    let currentHtml = localStorage.getItem("paste");
+    let indexPosition = currentHtml.indexOf(selection);
+
+    let newHtml =
+      currentHtml.slice(0, indexPosition) +
+      '<input type="checkbox"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">&nbsp;</span>' +
+      currentHtml.slice(indexPosition);
+
+    paste.innerHTML = newHtml;
+    localStorage.setItem("paste", paste.innerHTML);
+  }
 }
