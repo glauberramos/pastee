@@ -1,28 +1,76 @@
-function countWords(str) {
-  const words = str
-    .trim()
-    .split(/\s+/)
-    .filter((char) => char).length;
+let allNotes = {};
+let selectedKey;
+let orderedKeys;
 
-  const allChars = str.match(/./gu);
-  const chars =
-    allChars &&
-    allChars.map((char) => char.trim()).filter((char) => char).length;
+function loadNotes() {
+  document.getElementById("notes-menu").innerHTML = null;
 
-  document.getElementById("words").innerText = `${words} words ${
-    chars ? chars : 0
-  } chars`;
+  orderedKeys = Object.keys(localStorage)
+    .map((key) => parseInt(key.split("paste")[1], 10) || 0)
+    .sort(function (a, b) {
+      return a - b;
+    });
+
+  if (orderedKeys.length === 0) {
+    selectedKey = "paste";
+  }
+
+  if (orderedKeys.length === 1) {
+    selectedKey = "paste" + (orderedKeys[0] ? orderedKeys[0] : "");
+  }
+
+  if (orderedKeys.length > 1) {
+    for (let [index, keyIndex] of orderedKeys.entries()) {
+      const key = "paste" + (keyIndex ? keyIndex : "");
+      let value = localStorage[key];
+
+      document.getElementById("notes-menu").appendChild(createLi(index, key));
+
+      allNotes[key] = value;
+    }
+  }
+
+  var paste = document.getElementById("paste");
+  paste.scrollTop = 0;
+  paste.innerHTML = localStorage.getItem(selectedKey);
+  placeCaretAtEnd(paste);
+  countWords(paste.innerText);
+}
+
+function createLi(index, key) {
+  var li = document.createElement("li");
+
+  li.innerHTML = '<div class="border-item"></div>' + (index + 1) + ". note";
+  li.setAttribute("data-key", key);
+  li.addEventListener("click", function () {
+    changeNote(this.getAttribute("data-key"));
+  });
+
+  var a = document.createElement("a");
+  a.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>';
+  a.setAttribute("data-key", key);
+  a.addEventListener("click", function (event) {
+    event.stopPropagation();
+    removeNote(this.getAttribute("data-key"));
+  });
+
+  li.appendChild(a);
+
+  if (!selectedKey || selectedKey === key) {
+    selectedKey = key;
+    li.classList.add("active");
+  }
+
+  return li;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var paste = document.getElementById("paste");
-  paste.scrollTop = 0;
-  paste.innerHTML = localStorage.getItem("paste");
-  countWords(paste.innerText);
+  loadNotes();
 
   if (paste.addEventListener) {
     paste.addEventListener("input", function () {
-      localStorage.setItem("paste", paste.innerHTML);
+      localStorage.setItem(selectedKey, paste.innerHTML);
       countWords(paste.innerText);
     });
 
@@ -41,11 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
         event.target.removeAttribute("checked");
       }
 
-      localStorage.setItem("paste", paste.innerHTML);
+      localStorage.setItem(selectedKey, paste.innerHTML);
     });
   } else if (paste.attachEvent) {
     paste.attachEvent("onpropertychange", function () {
-      localStorage.setItem("paste", paste.innerHTML);
+      localStorage.setItem(selectedKey, paste.innerHTML);
       countWords(paste.innerText);
     });
   }
@@ -53,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.onfocus = function () {
   var paste = document.getElementById("paste");
-  paste.innerHTML = localStorage.getItem("paste");
+  paste.innerHTML = localStorage.getItem(selectedKey);
 };
 
 function createLink() {
@@ -97,7 +145,7 @@ function insertCheckbox() {
   const selection = window.getSelection().toString().trim();
 
   if (selection) {
-    let currentHtml = localStorage.getItem("paste");
+    let currentHtml = localStorage.getItem(selectedKey);
     let indexPosition = currentHtml.indexOf(selection);
 
     let newHtml =
@@ -106,6 +154,51 @@ function insertCheckbox() {
       currentHtml.slice(indexPosition);
 
     paste.innerHTML = newHtml;
-    localStorage.setItem("paste", paste.innerHTML);
+    localStorage.setItem(selectedKey, paste.innerHTML);
   }
+}
+
+function changeNote(noteKey) {
+  var paste = document.getElementById("paste");
+  paste.innerHTML = localStorage.getItem(noteKey);
+
+  countWords(paste.innerText);
+
+  document
+    .querySelector(`li[data-key="${selectedKey}"]`)
+    .classList.remove("active");
+
+  selectedKey = noteKey;
+
+  document
+    .querySelector(`li[data-key="${selectedKey}"]`)
+    .classList.add("active");
+
+  placeCaretAtEnd(paste);
+}
+
+function removeNote(noteKey) {
+  localStorage.removeItem(noteKey);
+
+  if (noteKey === selectedKey) {
+    orderedKeys.splice(orderedKeys.indexOf(noteKey), 1);
+    selectedKey = "paste" + (orderedKeys[0] ? orderedKeys[0] : "");
+  }
+
+  loadNotes();
+}
+
+function newNote() {
+  const keys = Object.keys(localStorage)
+    .map((key) => parseInt(key.split("paste")[1], 10) || 0)
+    .sort(function (a, b) {
+      return a - b;
+    });
+
+  let lastIndex = keys.slice(-1);
+  let newKey = "paste" + (parseInt(lastIndex, 10) + 1);
+
+  localStorage.setItem(newKey, "");
+  loadNotes();
+  changeNote(newKey);
 }

@@ -25,6 +25,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <script src="utils.js"></script>
     <script src="script.js"></script>
     <script
       defer
@@ -40,6 +41,19 @@
         width="15"
         style="border: none; position: fixed; right: 10px; top: 10px"
       ></iframe>
+      <div class="notes-menu">
+        <button onclick="newNote()" title="new note">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"></path>
+          </svg>
+          note
+        </button>
+        <ul id="notes-menu"></ul>
+      </div>
       <div id="container" class="container">
         <div class="header-content">
           <h1 class="logo">Pastee</h1>

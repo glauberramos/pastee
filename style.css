@@ -60,17 +60,11 @@ ol {
 
 .container {
   position: relative;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   height: 98vh;
   display: flex;
   flex-direction: column;
-}
-
-@media (max-width: 1100px) {
-  .container {
-    margin: 0 10px;
-  }
 }
 
 .header-content {
@@ -113,8 +107,13 @@ button {
   cursor: pointer;
 }
 
-button:hover svg {
+button:hover svg,
+svg:hover {
   fill: rgb(66, 220, 219);
+}
+
+button:hover {
+  color: rgb(66, 220, 219);
 }
 
 .popup {
@@ -164,5 +163,86 @@ button:hover svg {
 
   .textarea {
     margin-top: 35px;
+  }
+}
+
+.notes-menu {
+  padding: 15px;
+  position: fixed;
+  top: 0;
+}
+
+.notes-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.notes-menu button {
+  display: flex;
+  justify-content: space-between;
+  width: 56px;
+  align-items: center;
+  margin-left: 11px;
+}
+
+.notes-menu li {
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+.notes-menu li:hover {
+  color: var(--green);
+}
+
+.notes-menu li svg {
+  width: 14px;
+}
+
+.notes-menu li.active {
+  color: var(--green);
+}
+
+.notes-menu li .border-item {
+  border-left: 2px solid transparent;
+  margin-right: 6px;
+  height: 14px;
+  position: relative;
+  top: 3px;
+}
+
+.notes-menu li.active .border-item {
+  border-left: 2px solid var(--green);
+}
+
+.notes-menu a {
+  position: relative;
+  margin-left: 2px;
+  top: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .notes-menu {
+    position: initial;
+    padding-bottom: 0;
+  }
+
+  .notes-menu ul {
+    display: flex;
+  }
+
+  .notes-menu li {
+    margin-right: 7px;
   }
 }
