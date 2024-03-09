@@ -15,7 +15,7 @@ body {
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
   margin: 10px 0;
   display: inline-block;
@@ -49,13 +49,14 @@ ol {
   color: #c3d7ef;
   font-size: 18px;
   line-height: 1.3em;
-  padding: 15px 0;
+  padding: 15px 10px;
   border-radius: 2px;
   resize: none;
   outline: none;
   text-align: left;
   overflow: auto;
   height: 100vh;
+  border: 1px solid #303947;
 }
 
 .container {
@@ -130,34 +131,23 @@ button:hover {
   color: var(--green);
 }
 
-@media (max-width: 600px) {
-  small {
-    display: none;
-  }
+.commands,
+.words {
+  position: initial;
+}
 
-  .logo {
-    font-size: 20px;
-  }
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .commands,
-  .words {
-    position: initial;
-  }
-
-  .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  iframe {
-    display: none;
-  }
+iframe {
+  display: none;
 }
 
 @media all and (display-mode: standalone) {
-  .logo,
-  small {
+  .logo {
     display: none;
   }
 
