@@ -22,6 +22,7 @@ body {
   color: var(--green);
   line-height: 1.1em;
   text-shadow: 0 0 20px #ffffff4a, 0 0 20px #00ffab45;
+  margin-right: 15px;
 }
 
 small {
@@ -72,6 +73,11 @@ ol {
   width: 100%;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 a,
 svg {
   color: #c3d7ef;
@@ -86,14 +92,9 @@ svg {
   list-style: none;
   padding: 0;
   margin: 5px 0;
-  position: absolute;
-  top: 16px;
-  left: -5px;
 }
 
 .words {
-  position: absolute;
-  top: 25px;
   right: 0;
   font-size: 14px;
 }
@@ -129,11 +130,6 @@ button:hover {
 
 .popup a {
   color: var(--green);
-}
-
-.commands,
-.words {
-  position: initial;
 }
 
 .header-content {
