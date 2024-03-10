@@ -260,3 +260,8 @@ dialog button {
   margin-left: 10px;
   cursor: pointer;
 }
+
+.shortcut-label {
+  display: inline-block;
+  width: 125px;
+}
