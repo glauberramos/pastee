@@ -244,12 +244,16 @@ dialog {
   background: #101419;
   text-align: left;
   line-height: 1.5em;
-  padding: 15px 25px;
+  padding: 15px 30px;
   border-radius: 3px;
+  min-width: 250px;
 }
 
 dialog button {
-  margin-top: 10px;
+  margin-top: 20px;
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 2px;
 }
 
 .info-icon {
