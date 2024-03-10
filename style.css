@@ -17,12 +17,13 @@ body {
 .logo {
   font-size: 20px;
   font-weight: 700;
-  margin: 10px 0;
+  margin: 15px 0 10px;
   display: inline-block;
   color: var(--green);
   line-height: 1.1em;
   text-shadow: 0 0 20px #ffffff4a, 0 0 20px #00ffab45;
   margin-right: 15px;
+  margin-left: 2px;
 }
 
 p {
@@ -140,7 +141,7 @@ button:hover {
 .notes-menu {
   padding: 15px;
   position: absolute;
-  top: 32px;
+  top: 37px;
   left: -128px;
   display: flex;
   flex-direction: column;
@@ -217,8 +218,12 @@ button:hover {
     width: auto;
   }
 
+  .logo {
+    margin-top: 5px;
+  }
+
   .notes-menu button {
-    margin-right: 10px;
+    margin: 10px 10px 10px 0;
   }
 
   .notes-menu ul {
