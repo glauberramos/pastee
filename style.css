@@ -231,3 +231,7 @@ button:hover {
     margin-right: 7px;
   }
 }
+
+input {
+  caret-color: rgb(167, 186, 210);
+}

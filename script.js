@@ -102,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentLine = currentNode;
 
         while (currentLine && currentLine !== paste) {
-          console.log(currentLine);
-
           var inputs = isElement(currentLine)
             ? currentLine.getElementsByTagName("input")
             : [];
@@ -112,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
             checkboxInLine = true;
             break;
           }
+
           currentLine = currentLine.parentNode;
         }
       }
@@ -176,23 +175,6 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js", { scope: "/" });
 }
 
-function insertCheckbox() {
-  const selection = window.getSelection().toString().trim();
-
-  if (selection) {
-    let currentHtml = localStorage.getItem(selectedKey);
-    let indexPosition = currentHtml.indexOf(selection);
-
-    let newHtml =
-      currentHtml.slice(0, indexPosition) +
-      '<input type="checkbox"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">&nbsp;</span>' +
-      currentHtml.slice(indexPosition);
-
-    paste.innerHTML = newHtml;
-    localStorage.setItem(selectedKey, paste.innerHTML);
-  }
-}
-
 function changeNote(noteKey) {
   var paste = document.getElementById("paste");
   paste.innerHTML = localStorage.getItem(noteKey);
@@ -236,4 +218,56 @@ function newNote() {
   localStorage.setItem(newKey, "");
   loadNotes();
   changeNote(newKey);
+}
+
+function getNextNode(node) {
+  if (node.firstChild) return node.firstChild;
+
+  while (node) {
+    if (node.nextSibling) return node.nextSibling;
+    node = node.parentNode;
+  }
+}
+
+function getElement(node) {
+  return isElement(node) ? node : node.parentElement;
+}
+
+function insertCheckbox(element) {
+  const space = document.createElement("span");
+  space.innerHTML = "&nbsp;";
+  space.style =
+    "font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;";
+  element.prepend(space);
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  element.prepend(checkbox);
+}
+
+function addCheckboxesToSelection() {
+  const selection = window.getSelection();
+  const range = selection.getRangeAt(0);
+  let currentNode = range.startContainer;
+  let lines = [];
+
+  if (range.startContainer === range.endContainer) {
+    lines.push(getElement(range.startContainer));
+  }
+
+  while (currentNode && currentNode !== range.endContainer) {
+    const addElement = getElement(currentNode);
+
+    if (lines.indexOf(addElement) === -1) {
+      lines.push(addElement);
+    }
+
+    currentNode = getNextNode(currentNode);
+  }
+
+  for (line of lines) {
+    insertCheckbox(line);
+  }
+
+  localStorage.setItem(selectedKey, paste.innerHTML);
 }
