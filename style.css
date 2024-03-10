@@ -10,7 +10,7 @@ body {
   color: rgb(167, 186, 210);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  background: #12161d;
+  background: #121212;
   margin: 0;
 }
 
@@ -147,8 +147,13 @@ button:hover {
 
 .notes-menu {
   padding: 15px;
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 26px;
+  left: -124px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100px;
 }
 
 .notes-menu ul {
@@ -162,7 +167,6 @@ button:hover {
   justify-content: space-between;
   width: 56px;
   align-items: center;
-  margin-left: 10px;
 }
 
 .notes-menu li {
@@ -215,6 +219,12 @@ button:hover {
   .notes-menu {
     position: initial;
     padding-bottom: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .notes-menu button {
+    margin-right: 10px;
   }
 
   .notes-menu ul {
