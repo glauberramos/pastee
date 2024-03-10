@@ -73,7 +73,7 @@ ol {
 
 a,
 svg {
-  color: #c3d7ef;
+  color: #eaeaea;
 }
 
 svg {
@@ -99,7 +99,7 @@ button {
   padding: 2px;
   font-size: 16px;
   background: none;
-  color: #c3d7ef;
+  color: #eaeaea;
   cursor: pointer;
 }
 
@@ -115,7 +115,7 @@ button:hover {
 .popup {
   position: absolute;
   background: #12161d;
-  color: #c3d7ef;
+  color: #eaeaea;
   padding: 9px 12px;
   border-radius: 2px;
   border: 1px solid #354253;
