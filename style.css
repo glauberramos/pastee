@@ -139,12 +139,6 @@ button:hover {
   justify-content: space-between;
 }
 
-@media (max-width: 600px) {
-  iframe {
-    display: none;
-  }
-}
-
 @media all and (display-mode: standalone) {
   .logo {
     display: none;
