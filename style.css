@@ -148,10 +148,6 @@ button:hover {
   .logo {
     display: none;
   }
-
-  .textarea {
-    margin-top: 35px;
-  }
 }
 
 .notes-menu {
@@ -171,7 +167,7 @@ button:hover {
   justify-content: space-between;
   width: 56px;
   align-items: center;
-  margin-left: 11px;
+  margin-left: 10px;
 }
 
 .notes-menu li {
@@ -228,6 +224,7 @@ button:hover {
 
   .notes-menu ul {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .notes-menu li {

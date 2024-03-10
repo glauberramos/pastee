@@ -1,6 +1,7 @@
 let allNotes = {};
 let selectedKey;
 let orderedKeys;
+let currentLine;
 
 function loadNotes() {
   document.getElementById("notes-menu").innerHTML = null;
@@ -91,6 +92,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
       localStorage.setItem(selectedKey, paste.innerHTML);
     });
+
+    // paste.addEventListener("keydown", function (event) {
+    //   if (event.key === "Enter") {
+    //     let parentDiv =
+    //       document.getSelection().anchorNode.parentNode.parentElement;
+
+    //     console.log(document.getSelection().anchorNode.parentNode);
+
+    //     if (
+    //       parentDiv.querySelectorAll('input[type="checkbox"]').length === 1 &&
+    //       parentDiv.getAttribute("name") !== "paste"
+    //     ) {
+    //       console.log("encontrou mardito");
+    //     }
+    //     // return false;
+    //   }
+    // });
+
+    // paste.addEventListener("keyup", function (event) {
+    //   if (event.key === "Enter") {
+    //     // document.execCommand(
+    //     //   "insertHTML",
+    //     //   true,
+    //     //   '<input type="checkbox"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">&nbsp;</span>'
+    //     // );
+    //   }
+    // });
   } else if (paste.attachEvent) {
     paste.attachEvent("onpropertychange", function () {
       localStorage.setItem(selectedKey, paste.innerHTML);
