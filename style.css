@@ -55,9 +55,9 @@ ol {
 
 .container {
   position: relative;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  height: 98vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
