@@ -1,7 +1,7 @@
 let allNotes = {};
 let selectedKey;
 let orderedKeys;
-let currentLine;
+let checkboxInLine = false;
 
 function loadNotes() {
   document.getElementById("notes-menu").innerHTML = null;
@@ -93,32 +93,39 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem(selectedKey, paste.innerHTML);
     });
 
-    // paste.addEventListener("keydown", function (event) {
-    //   if (event.key === "Enter") {
-    //     let parentDiv =
-    //       document.getSelection().anchorNode.parentNode.parentElement;
+    paste.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        checkboxInLine = false;
 
-    //     console.log(document.getSelection().anchorNode.parentNode);
+        const range = window.getSelection().getRangeAt(0);
+        const currentNode = range.commonAncestorContainer;
+        let currentLine = currentNode;
 
-    //     if (
-    //       parentDiv.querySelectorAll('input[type="checkbox"]').length === 1 &&
-    //       parentDiv.getAttribute("name") !== "paste"
-    //     ) {
-    //       console.log("encontrou mardito");
-    //     }
-    //     // return false;
-    //   }
-    // });
+        while (currentLine && currentLine !== paste) {
+          console.log(currentLine);
 
-    // paste.addEventListener("keyup", function (event) {
-    //   if (event.key === "Enter") {
-    //     // document.execCommand(
-    //     //   "insertHTML",
-    //     //   true,
-    //     //   '<input type="checkbox"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">&nbsp;</span>'
-    //     // );
-    //   }
-    // });
+          var inputs = isElement(currentLine)
+            ? currentLine.getElementsByTagName("input")
+            : [];
+
+          if (inputs.length > 0 ? inputs[0].type === "checkbox" : false) {
+            checkboxInLine = true;
+            break;
+          }
+          currentLine = currentLine.parentNode;
+        }
+      }
+    });
+
+    paste.addEventListener("keyup", function (event) {
+      if (event.key === "Enter" && checkboxInLine) {
+        document.execCommand(
+          "insertHTML",
+          true,
+          '<input type="checkbox"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">&nbsp;</span>'
+        );
+      }
+    });
   } else if (paste.attachEvent) {
     paste.attachEvent("onpropertychange", function () {
       localStorage.setItem(selectedKey, paste.innerHTML);
