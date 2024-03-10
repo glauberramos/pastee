@@ -39,3 +39,12 @@ function placeCaretAtEnd(element) {
 function isElement(element) {
   return element instanceof Element || element instanceof HTMLDocument;
 }
+
+function selectElementContents(element) {
+  var range = document.createRange();
+  range.selectNodeContents(element);
+
+  var selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+}

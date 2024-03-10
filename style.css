@@ -245,6 +245,7 @@ dialog {
   text-align: left;
   line-height: 1.5em;
   padding: 15px 25px;
+  border-radius: 3px;
 }
 
 dialog button {

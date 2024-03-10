@@ -136,6 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#about").showModal();
   };
 
+  document.querySelector("#keyboard-icon").onclick = function () {
+    document.querySelector("#keyboard").showModal();
+  };
+
   document.getElementById("save-note").onclick = function () {
     this.download = "note.txt";
     this.href = URL.createObjectURL(
@@ -156,9 +160,11 @@ function createLink() {
   document.execCommand("createLink", false, selection);
 }
 
-function deleteLink() {
+function deleteLink(element) {
   deletePopup();
+  selectElementContents(element);
   document.execCommand("unlink", false, null);
+  window.getSelection().removeAllRanges();
 }
 
 function createPopup(linkText, event) {
@@ -173,6 +179,17 @@ function createPopup(linkText, event) {
   link.innerHTML = linkText;
   popup.innerHTML = "Visit URL: ";
   popup.appendChild(link);
+
+  var removeLink = document.createElement("a");
+  removeLink.innerHTML = "Remove link";
+  removeLink.setAttribute("href", "#");
+  removeLink.onclick = function () {
+    deleteLink(event.target);
+  };
+
+  var textNode = document.createTextNode(" - ");
+  popup.appendChild(textNode);
+  popup.appendChild(removeLink);
 
   document.getElementById("container").appendChild(popup);
 }
