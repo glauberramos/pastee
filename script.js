@@ -258,7 +258,7 @@ function addCheckboxesToSelection() {
   while (currentNode && currentNode !== range.endContainer) {
     const addElement = getElement(currentNode);
 
-    if (lines.indexOf(addElement) === -1) {
+    if (lines.indexOf(addElement) === -1 && addElement.tagName === "DIV") {
       lines.push(addElement);
     }
 
