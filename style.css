@@ -85,6 +85,8 @@ svg {
   list-style: none;
   padding: 0;
   margin: 5px 0;
+  position: relative;
+  top: 4px;
 }
 
 .words {
@@ -202,13 +204,13 @@ button:hover {
   cursor: pointer;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .container {
     margin: 0 10px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .notes-menu {
     position: initial;
     padding-bottom: 0;
@@ -216,6 +218,10 @@ button:hover {
     align-items: center;
     padding: 5px 0 0;
     width: auto;
+  }
+
+  .commands {
+    top: 0;
   }
 
   .logo {
