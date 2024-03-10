@@ -195,14 +195,18 @@ function changeNote(noteKey) {
 }
 
 function removeNote(noteKey) {
-  localStorage.removeItem(noteKey);
+  var result = confirm("Are you sure you want to delete this note?");
 
-  if (noteKey === selectedKey) {
-    orderedKeys.splice(orderedKeys.indexOf(noteKey), 1);
-    selectedKey = "paste" + (orderedKeys[0] ? orderedKeys[0] : "");
+  if (result) {
+    localStorage.removeItem(noteKey);
+
+    if (noteKey === selectedKey) {
+      orderedKeys.splice(orderedKeys.indexOf(noteKey), 1);
+      selectedKey = "paste" + (orderedKeys[0] ? orderedKeys[0] : "");
+    }
+
+    loadNotes();
   }
-
-  loadNotes();
 }
 
 function newNote() {
