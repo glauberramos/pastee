@@ -271,3 +271,25 @@ function addCheckboxesToSelection() {
 
   localStorage.setItem(selectedKey, paste.innerHTML);
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && event.key === "n") {
+    newNote();
+  }
+
+  if (event.ctrlKey && event.key === "l") {
+    document.execCommand("insertUnorderedList", false, null);
+  }
+
+  if (event.ctrlKey && event.key === "o") {
+    document.execCommand("insertOrderedList", false, null);
+  }
+
+  if (event.ctrlKey && event.key === "q") {
+    addCheckboxesToSelection();
+  }
+
+  if (event.ctrlKey && event.key === "w") {
+    createLink();
+  }
+});
