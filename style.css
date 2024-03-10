@@ -99,6 +99,7 @@ svg {
   font-size: 14px;
 }
 
+.commands a,
 button {
   display: block;
   border: none;
@@ -234,4 +235,23 @@ button:hover {
 
 input {
   caret-color: rgb(167, 186, 210);
+}
+
+dialog {
+  color: rgb(167, 186, 210);
+  border-color: rgb(167, 186, 210);
+  border-width: 1px;
+  background: #101419;
+  text-align: left;
+  line-height: 1.5em;
+  padding: 15px 25px;
+}
+
+dialog button {
+  margin-top: 10px;
+}
+
+.info-icon {
+  margin-left: 10px;
+  cursor: pointer;
 }

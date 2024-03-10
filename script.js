@@ -131,6 +131,19 @@ document.addEventListener("DOMContentLoaded", function () {
       countWords(paste.innerText);
     });
   }
+
+  document.querySelector("#about-icon").onclick = function () {
+    document.querySelector("#about").showModal();
+  };
+
+  document.getElementById("save-note").onclick = function () {
+    this.download = "note.txt";
+    this.href = URL.createObjectURL(
+      new Blob([document.querySelector("#paste").innerText], {
+        type: "text/plain",
+      })
+    );
+  };
 });
 
 window.onfocus = function () {
