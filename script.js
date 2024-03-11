@@ -271,6 +271,8 @@ function insertCheckbox(element) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   element.prepend(checkbox);
+
+  placeCaretAtEnd(element);
 }
 
 function addCheckboxesToSelection() {
