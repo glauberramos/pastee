@@ -134,12 +134,6 @@ button:hover {
   justify-content: space-between;
 }
 
-@media all and (display-mode: standalone) {
-  .logo {
-    display: none;
-  }
-}
-
 .notes-menu {
   padding: 15px;
   position: absolute;
