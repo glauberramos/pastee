@@ -268,12 +268,6 @@ function getElement(node) {
 }
 
 function insertCheckbox(element) {
-  const space = document.createElement("span");
-  space.innerHTML = "&nbsp;";
-  space.style =
-    "font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;";
-  element.prepend(space);
-
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   element.prepend(checkbox);
@@ -300,7 +294,11 @@ function addCheckboxesToSelection() {
   }
 
   for (line of lines) {
-    insertCheckbox(line);
+    if (line.getElementsByTagName("input").length > 0) {
+      line.getElementsByTagName("input")[0].remove();
+    } else {
+      insertCheckbox(line);
+    }
   }
 
   localStorage.setItem(selectedKey, paste.innerHTML);
