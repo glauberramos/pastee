@@ -298,6 +298,7 @@ function addCheckboxesToSelection() {
   for (line of lines) {
     if (line.getElementsByTagName("input").length > 0) {
       line.getElementsByTagName("input")[0].remove();
+      placeCaretAtEnd(line);
     } else {
       insertCheckbox(line);
     }
