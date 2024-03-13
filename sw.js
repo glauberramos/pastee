@@ -1,4 +1,4 @@
-let CACHE_VERSION = "app-v1.0";
+let CACHE_VERSION = "app-v1.1";
 let CACHE_FILES = [
   "/",
   "index.html",

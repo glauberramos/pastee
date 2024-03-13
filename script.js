@@ -118,11 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     paste.addEventListener("keyup", function (event) {
       if (event.key === "Enter" && checkboxInLine) {
-        document.execCommand(
-          "insertHTML",
-          true,
-          '<input type="checkbox"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;">&nbsp;</span>'
-        );
+        document.execCommand("insertHTML", true, '<input type="checkbox">');
       }
     });
   } else if (paste.attachEvent) {
