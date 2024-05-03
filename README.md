@@ -2,6 +2,8 @@
 
 <p align="left"><a href="https://pasteepad.com">pasteepad.com</a></p>
 
+## Online Text Editor and WordPad for notes
+
 ### Features
 
 - super simple app
